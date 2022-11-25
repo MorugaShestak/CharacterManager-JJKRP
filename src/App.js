@@ -1,22 +1,26 @@
 import './App.css';
+import UpdateButton from "./components/ui/UpdateButton/UpdateButton";
+import AdminButton from "./components/ui/AdminButton/AdminButton";
+import Table from "./components/ui/Table/Table";
+import {useGetCharacters} from "./components/hooks/useGetCharacters";
 
 function App() {
+
+    let Test = () => {
+        console.log(useGetCharacters())
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="Menu">
+            <UpdateButton/>
+            <AdminButton/>
+        </div>
+
+        <div className="Table">
+            <Table/>
+        </div>
+
     </div>
   );
 }
