@@ -1,9 +1,10 @@
 import './App.css';
-import UpdateButton from "./components/ui/UpdateButton/UpdateButton";
-import AdminButton from "./components/ui/AddCharacterButton/AddCharacterButton";
-import Table from "./components/ui/Table/Table";
+import UpdateButton from "./components/ui/Buttons/UpdateButton/UpdateButton";
 import {useGetCharacters} from "./components/hooks/useGetCharacters";
-import AddCharacterButton from "./components/ui/AddCharacterButton/AddCharacterButton";
+import AddCharacterButton from "./components/ui/Buttons/AddCharacterButton/AddCharacterButton";
+import EditCharacterButton from "./components/ui/Buttons/EditCharacterButton/EditCharacterButton";
+import AddWeaponButton from "./components/ui/Buttons/AddWeaponButton/AddWeaponButton";
+import DeleteWeaponButton from "./components/ui/Buttons/DeleteWeaponButton/DeleteWeaponButton";
 
 function App() {
 
@@ -13,13 +14,13 @@ function App() {
 
   return (
     <div className="App">
+
         <div className="Menu">
             <UpdateButton/>
             <AddCharacterButton/>
-        </div>
-
-        <div className="Table">
-            <Table/>
+            <EditCharacterButton/>
+            <AddWeaponButton/>
+            <DeleteWeaponButton/>
         </div>
 
     </div>
