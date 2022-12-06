@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
+import {url} from '../../settings.json'
 
-export function useGetCharacters() {
+export function useGetUsers() {
     const [characters, setCharacters] = useState()
 
     useEffect(() => {
+
 
         setCharacters()
     }, []);

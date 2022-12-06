@@ -1,6 +1,6 @@
 import './App.css';
 import UpdateButton from "./components/ui/Buttons/UpdateButton/UpdateButton";
-import {useGetCharacters} from "./components/hooks/useGetCharacters";
+import {useGetCharacters} from "./components/hooks/useGetUsers";
 import AddCharacterButton from "./components/ui/Buttons/AddCharacterButton/AddCharacterButton";
 import EditCharacterButton from "./components/ui/Buttons/EditCharacterButton/EditCharacterButton";
 import AddWeaponButton from "./components/ui/Buttons/AddWeaponButton/AddWeaponButton";
