@@ -14,17 +14,20 @@ app.get('/ping', (req, res) => {
 
 app.get('/getUsers', async (req, res) => {
         let users = await getUsers()
+        res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
         res.json(await users)
 })
 
 app.get('/getIDS', async (req, res) => {
         let ids = await getIDS()
+        res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
         res.json(await ids)
 })
 
 app.get('/getUser', async (req, res) => {
         let id = await req.query.id
         let user = await getUser(id)
+        res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
         res.json(await user)
 })
 
