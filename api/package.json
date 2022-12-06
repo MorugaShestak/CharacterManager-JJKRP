@@ -1,0 +1,27 @@
+{
+  "name": "character-manager-backend",
+  "version": "1.0.0",
+  "description": "Backend for character-manage-jjk-rp",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorugaShestak/CharacterManager-JJKRP.git"
+  },
+  "author": "Moruga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MorugaShestak/CharacterManager-JJKRP/issues"
+  },
+  "homepage": "https://github.com/MorugaShestak/CharacterManager-JJKRP#readme",
+  "dependencies": {
+    "better-sqlite3": "^8.0.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "firebase": "^9.14.0",
+    "firebase-cli": "^1.2.0",
+    "quick.db": "^9.0.6"
+  }
+}
