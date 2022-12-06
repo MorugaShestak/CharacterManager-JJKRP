@@ -8,27 +8,32 @@ const router = express.Router()
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.get('/ping', (req, res) => {
+app.get('/api/ping', (req, res) => {
     res.json({"message": "ping"})
 })
 
-app.get('/getUsers', async (req, res) => {
+app.get('/api/getUsers', async (req, res) => {
         let users = await getUsers()
         res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
         res.json(await users)
 })
 
-app.get('/getIDS', async (req, res) => {
+app.get('/api/getIDS', async (req, res) => {
         let ids = await getIDS()
         res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
         res.json(await ids)
 })
 
-app.get('/getUser', async (req, res) => {
-        let id = await req.query.id
-        let user = await getUser(id)
-        res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-        res.json(await user)
+app.get('/api/getUser', async (req, res) => {
+        try {
+                let id = await req.query.id
+                let user = await getUser(id)
+                res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+                res.json(await user)
+        }
+        catch (e) {
+                console.log(e)
+        }
 })
 
 let b = async() => {
@@ -36,21 +41,21 @@ let b = async() => {
         return await ids.all()
 }
 
-app.post('/addWeapon', async (req, res) => {
+app.post('/api/addWeapon', async (req, res) => {
         let id = req.body.id
         let weapon = req.body.weapon
         addWeapon(id, weapon)
         res.json({'id': id, 'weapon': weapon, 'message': 'add'})
 })
 
-app.post('/delWeapon', async (req, res) => {
+app.post('/api/delWeapon', async (req, res) => {
         let id = req.body.id
         let weapon = req.body.weapon
         delWeapon(id, weapon)
         res.json({'id': id, 'weapon': weapon, 'message': 'del'})
 })
 
-app.post('/initUser', async (req, res) => {
+app.post('/api/initUser', async (req, res) => {
 
         let ids = await getIDS()
         console.log(await ids)
@@ -74,7 +79,7 @@ app.post('/initUser', async (req, res) => {
         res.json({"added": true})
 });
 
-app.post('/changeUser', (req, res) => {
+app.post('/api/changeUser', (req, res) => {
 
         let id = req.body.id
         let character_name = req.body.character_name
