@@ -1,41 +1,28 @@
 {
-  "name": "character-manager-jjk-rp",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.4.3",
-    "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "character-manager-backend",
+  "version": "1.0.0",
+  "description": "Backend for character-manage-jjk-rp",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node index.js",
+    "test": "node index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorugaShestak/CharacterManager-JJKRP.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Moruga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MorugaShestak/CharacterManager-JJKRP/issues"
+  },
+  "homepage": "https://github.com/MorugaShestak/CharacterManager-JJKRP#readme",
+  "dependencies": {
+    "better-sqlite3": "^8.0.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "firebase": "^9.14.0",
+    "firebase-cli": "^1.2.0",
+    "quick.db": "^9.0.6"
   }
 }
